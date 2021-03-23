@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import GolferCard from './GolferCard'
 
 export default class Home extends Component {
     state = {
@@ -6,7 +7,7 @@ export default class Home extends Component {
     }
 
     componentDidMount() {
-    fetch('http://localhost:3000/golfer')
+    fetch('http://localhost:3001/golfer')
     .then(resp=>resp.json())
     .then(golfers =>{
         this.setState({
@@ -18,9 +19,9 @@ export default class Home extends Component {
     render() {
         return (
             <div id='home'>
-                <div style={{'backgroundColor':'white', opacity:0.75}} className='float-container'>
+                <div style={{'backgroundColor':'white', opacity:0.75}}>
                     <div id='tourney data' className='float-child'>
-                        <h1>Current Tourney:</h1>
+                        <h1>Current Tourny</h1>
                         <p><strong>The Honda Classic, PGA Tour</strong><br></br>
                         Tournament details<br></br>
                         Date: Mar 18–21, 2021<br></br>
@@ -51,12 +52,18 @@ export default class Home extends Component {
                     </table>
                 </div>
                 <br></br>
-                <br></br>
-                <br></br>
-                <br></br>
-                <br></br>
                 <hr></hr>
+                <div>
+                    <h1>Players</h1>
+                        {
+                        this.state.golfers.map(golfer => {
+                            return  <GolferCard golfer={golfer} key={golfer.id}/>
+                        })
+                    }
+                </div>
+
             </div>
+            
         )
     }
 }

@@ -16,17 +16,17 @@
   /* font-size: 20px; */
 }
 
-.float-container {
+/* .float-container { */
   /* border: 3px solid #fff;
   padding: 0px; */
-}
+/* } */
 
-.float-child {
-  /* width: 50%; */
+/* .float-child {
+  width: 50%;
   float: left;
   padding: 0px;
-  /* border: 2px solid red; */
-}  
+  border: 2px solid black;
+}   */
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
