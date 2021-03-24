@@ -17,11 +17,11 @@ export default class App extends Component {
     user: {}
   }
 
-  //  componentDidMount = () => {
-  //   fetch(`http://localhost:3000/users/1`)
-  //     .then(res => res.json())
-  //     .then(userData => this.setState({user: userData}))
-  // }
+   componentDidMount = () => {
+    fetch(`http://localhost:3001/user/5`)
+      .then(res => res.json())
+      .then(userData => this.setState({user: userData}))
+  }
 
 
   render() {
